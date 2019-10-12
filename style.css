@@ -1,9 +1,57 @@
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
-   
+
+
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: white;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: black;
+  color: white;
+  transform: rotateY(180deg);
+}
+
 a,a:hover {
   text-decoration:none;
   font-weight: 400;
+  border-radius: 50%;
+  font-size: 20px;
 }
 
 html,
@@ -36,7 +84,7 @@ img {
 }
 
 /*--------------------------
- 2. helper classes 
+ 2. helper classes
  ----------------------------*/
 
 .section-title {
@@ -104,7 +152,7 @@ img {
 }
 
 /*--------------------------
- 3. header area 
+ 3. header area
  ----------------------------*/
 #mainNav {
 	position: fixed;
@@ -230,7 +278,7 @@ li.logo {
 }
 
 /*--------------------------
- 5. about area 
+ 5. about area
  ----------------------------*/
 
 .about-area {
@@ -317,7 +365,7 @@ li.logo {
 .social-medias ul>li>a>i.fa-facebook{
   padding-left:12px;
 }
- 
+
 .personal-details-top p {
     margin-top: 40px;
     line-height: 28px;
@@ -326,7 +374,7 @@ li.logo {
 }
 
 /*--------------------------
- 6. skill progress area 
+ 6. skill progress area
  ----------------------------*/
 .skill-progress {
     margin-top: 45px;
@@ -352,7 +400,7 @@ li.logo {
 
 .progressbar {
     margin-top: 30px;
-} 
+}
 .feature-items {
     margin-top: 50px;
 }
@@ -378,7 +426,7 @@ li.logo {
  }
 
 /*--------------------------
- 7. portfolio area 
+ 7. portfolio area
  ----------------------------*/
 
 .portfolio-area {
@@ -389,7 +437,7 @@ li.logo {
   margin-top: 30px;
   margin-left: 15px;
 }
- 
+
 .portfolio-nav ul li {
     float:  left;
     cursor:  pointer;
@@ -410,7 +458,7 @@ li.logo {
 
 .portfolio-nav ul li:hover {
   color: #EE4D45;
-} 
+}
 
 .all-portfolios {
     margin-top: 40px;
@@ -537,7 +585,7 @@ li.logo {
 }
 
 /*--------------------------
- 8. quote area 
+ 8. quote area
  ----------------------------*/
 .quote-items{
 	padding-top:10px;
@@ -578,9 +626,8 @@ li.logo {
 }
 
 /*--------------------------
- 9. service area 
+ 9. service area
  ----------------------------*/
-
 .service-area {
   padding:100px 0px;
 }
@@ -601,12 +648,13 @@ li.logo {
 }
 
 .single-service i {
-  font-size: 43px;
+  font-size: 42px;
   -webkit-transition: all 0.5s ease 0s;
   -moz-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
+
 
 .single-service h3 {
     font-size:  22px;
@@ -616,7 +664,7 @@ li.logo {
   transition: all 0.5s ease 0s;
   font-weight: 600;
   line-height: 50px;
-} 
+}
 .single-service p {
    font-size: 14px;
 	line-height: 26px;
@@ -636,10 +684,11 @@ li.logo {
 }
 .active-service h3 {
   color: #EE4D45;
+  border-radius: 20%;
 }
 
 /*--------------------------
- 10. testimonial area 
+ 10. testimonial area
  ----------------------------*/
 
 
@@ -664,7 +713,7 @@ li.logo {
     margin-top: 15px;
     border: 1px solid #EE4D45;
     border-radius: 50%;
-} 
+}
 
 .owl-carousel .owl-item .single-testimonial img{
 	display: inline-block;
@@ -710,10 +759,10 @@ li.logo {
 	font-weight: 400;
 	letter-spacing: 2px;
 }
- 
+
 
 /*--------------------------
- 11. blog area 
+ 11. blog area
  ----------------------------*/
 
  .blog-area {
@@ -837,25 +886,25 @@ li.logo {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 400;
 }
- 
+
  .single-left-content {
     overflow: hidden;
     margin-left: 41%;
 }
- 
+
 .single-left-content a:hover {
   text-decoration:none;
 }
 
 /*--------------------------
- 12. promotion area 
+ 12. promotion area
  ----------------------------*/
 .promotion-area{
   padding-bottom:100px;
 }
 .promotion-text {
     margin-top: 50px;
-} 
+}
 
 .promotion-text p {
    color: #545454;
@@ -864,7 +913,7 @@ li.logo {
   margin: 0 auto;
   line-height: 28px;
 }
- 
+
 .promotion-btn {
     text-transform:  uppercase;
   margin-top:40px;
@@ -904,7 +953,7 @@ li.logo {
 
 
 /*--------------------------
- 13. contact area 
+ 13. contact area
  ----------------------------*/
 .contact-area {
     background:  #F5F4F2;
@@ -985,10 +1034,10 @@ li.logo {
     padding: 5px 0px;
 	font-weight:700;
 	font-family: 'Open Sans', sans-serif;
-} 
+}
 
 /*--------------------------
- 14. footer area 
+ 14. footer area
  ----------------------------*/
 
 .footer-area {
@@ -1021,7 +1070,7 @@ li.logo {
 
 
 /*--------------------------
- 15. Page Area Styles 
+ 15. Page Area Styles
  ----------------------------*/
 
 .page-title h1 {
@@ -1040,15 +1089,15 @@ li.logo {
 }
 .page-title p>span {
   color: #EE4D45;
-} 
+}
 
 .page-padding{
   padding:120px 0px;
 }
- 
+
 /*--------------------------
- 16. Blog Page Area Styles 
- ----------------------------*/ 
+ 16. Blog Page Area Styles
+ ----------------------------*/
 
 .blog-page-area{
   padding-bottom:150px;
@@ -1078,7 +1127,7 @@ a.read-blog {
 }
 .blog-item p {
   margin-bottom: 30px;
-} 
+}
 
 .search-box p>a {
   background: #EE4D45;
@@ -1287,7 +1336,7 @@ a.read-blog {
  ----------------------------*/
 .single-blog-item {
     margin-bottom: 0;
-} 
+}
 
 .single-blog-item p>span {
   display: block;
@@ -1418,7 +1467,7 @@ a.read-blog {
 }
 
 /*--------------------------
- 18. preloader CSS 
+ 18. preloader CSS
  ----------------------------*/
 
 #preloader {
@@ -1482,7 +1531,7 @@ a.read-blog {
 }
 
 /*--------------------------
- 20. RESPONSIVE CSS 
+ 20. RESPONSIVE CSS
  ----------------------------*/
 
 @media only screen and (max-width: 1200px) {
@@ -1674,7 +1723,7 @@ a.read-blog {
 		overflow:hidden;
 	}
 	.activeNav{
-		max-height:100%; 
+		max-height:100%;
 		overflow:auto;
 	}
 	.nav-list li{
@@ -1687,7 +1736,7 @@ a.read-blog {
 	.nav-list li:not(.logo)>a:hover{
 		color: #fff !important;
 		background:#EE4D45;
-		
+
 	}
 	.promo-info {
 		padding-top: 30%;
@@ -1889,4 +1938,3 @@ a.read-blog {
 		font-size: 20px;
 	}
 }
-
